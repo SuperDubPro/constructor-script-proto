@@ -1,28 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Link } from "react-router-dom"
+import './App.css'
+import routes from "./routes";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar>
+        <Link to="/" >Constructor</Link>
+        <Link to="/viewer" >Viewer</Link>
+        <Link to="/data" >Data</Link>
+      </Sidebar>
+      <div className="page">
+       <Routes>
+        <Route path="/" element={<routes.ConstructorPage />} />
+        <Route path="/viewer" element={<routes.ViewerPage />} />
+        <Route path="/data" element={<routes.DataPage />} />
+       </Routes>
+      </div>
     </div>
   );
 }
