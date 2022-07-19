@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom"
 import './App.css'
-import routes from "./routes";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar"
+import pages from "./components/pages"
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
       </Sidebar>
       <div className="page">
        <Routes>
-        <Route path="/" element={<routes.ConstructorPage />} />
-        <Route path="/viewer" element={<routes.ViewerPage />} />
-        <Route path="/data" element={<routes.DataPage />} />
+        <Route path="/" element={<pages.Constructor />} />
+        <Route path="/viewer" element={<pages.Viewer />} />
+        <Route path="/data" element={<pages.DataSettings />} />
        </Routes>
       </div>
     </div>

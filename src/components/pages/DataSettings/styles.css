@@ -1,0 +1,10 @@
+.body {
+    padding: 0 8px;
+}
+
+.btn-block {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    gap: 8px;
+}
